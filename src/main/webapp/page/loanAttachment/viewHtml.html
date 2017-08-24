@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<div style="overflow-x:hidden;overflow-y:scroll;">
+    <iframe src="" id="htmlView" width="890" height="800" ></iframe>
+</div>
+</table>
+</body>
+<script type="text/javascript" src="../../component/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/index.js"></script>
+<script>
+    $(function () {
+        var params = getIframeParams(window.document.location.href);
+        $('#htmlView').attr('src', '../../lendRequestUpload/browseAttachment/' + params.id + '/html');
+    })
+
+</script>
+</html>

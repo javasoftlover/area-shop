@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>更改信息</title>
+</head>
+
+<body>
+<form id="baseInfoForm">
+    <div class="main_content_table">
+
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">旧身份证号:</div>
+            <div class="main_content_td_white_small2">
+                <input type="text" name="oldIdNo" id="oldIdNo" class="easyui-validatebox textbox" style="height: 23px" readonly />
+            </div>
+            <div class="main_content_td_graylast_small2">身份证号:</div>
+            <div class="main_content_td_whitelast_small2">
+                <input type="text" name="idNo" id="idNo" class="easyui-validatebox textbox"
+                       style="height: 23px" data-options="panelHeight:'auto',validType:'idcard'" placeholder="身份证号"/>
+            </div>
+        </div>
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">旧放款时间:</div>
+            <div class="main_content_td_white_small2">
+                <input type="text" name="oldAuditedTime" id="oldAuditedTime" class="easyui-datebox" data-options="prompt:'旧放款时间'" style="height: 23px" readonly/>
+            </div>
+            <div class="main_content_td_graylast_small2">放款时间:</div>
+            <div class="main_content_td_whitelast_small2">
+                <input type="text" name="auditedTime" id="auditedTime" class=" easyui-datebox"  data-options="prompt:'放款时间'"/>
+            </div>
+        </div>
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">旧进件状态:</div>
+            <div class="main_content_td_white_small2">
+                <input type="text"name="oldLendRequestStatus" id="oldLendRequestStatus" class="easyui-combobox"
+                       data-options="url:'../../dictionary/option/32',prompt:'旧进件状态'" readonly/>
+            </div>
+            <div class="main_content_td_graylast_small2">进件状态:</div>
+            <div class="main_content_td_whitelast_small2">
+                <input type="text" name="status" id="status" class="easyui-combobox"
+                       data-options="url:'../../dictionary/option/32',prompt:'进件状态'" />
+            </div>
+        </div>
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">旧进件时间:</div>
+            <div class="main_content_td_white_small2">
+                <input type="text"name="oldSubmitTime" id="oldSubmitTime" class="easyui-datetimebox" data-options="prompt:'旧进件时间'"  readonly/>
+            </div>
+            <div class="main_content_td_graylast_small2">进件时间:</div>
+            <div class="main_content_td_whitelast_small2">
+                <input type="text" name="submitTime" id="submitTime" class="easyui-datetimebox" data-options="prompt:'进件时间'" readonly/>
+            </div>
+        </div>
+
+
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">旧放款渠道:</div>
+            <div class="main_content_td_white_small2">
+                <input type="text" name="oldLendLoanChannelType" id="oldLendLoanChannelType" class="easyui-combobox"
+                       data-options="url:'../../dictionary/option/57',prompt:'旧放款渠道'" readonly/>
+            </div>
+            <div class="main_content_td_graylast_small2">放款渠道:</div>
+            <div class="main_content_td_whitelast_small2">
+                <input type="text" name="lendLoanChannelType" id="lendLoanChannelType" class="easyui-combobox"
+                       data-options="url:'../../dictionary/option/57',prompt:'放款渠道'"/>
+            </div>
+            <input type="hidden" id="requestId" name="requestId">
+        </div>
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">旧进件版本:</div>
+            <div class="main_content_td_white_small2">
+                <input type="text" name="oldRequestVersion" id="oldRequestVersion" class="easyui-validatebox textbox" style="height: 23px" readonly />
+            </div>
+            <div class="main_content_td_graylast_small2">进件版本:</div>
+            <div class="main_content_td_whitelast_small2">
+                <input type="text" name="requestVersion" id="requestVersion" class="easyui-numberbox"
+                       placeholder="进件版本"/>
+            </div>
+        </div>
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">旧电销推荐:</div>
+            <div class="main_content_td_white_small2">
+                <select type="text" id="oldCallCenter" class="easyui-combobox" data-options="  width: 120">
+                    <option value="true">是</option>
+                    <option value="false">否</option>
+                </select>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+    </div>
+</form>
+</body>
+</html>

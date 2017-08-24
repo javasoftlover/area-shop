@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>充值错误数据</title>
+</head>
+
+<body>
+<div class="easyui-layout" style="width:100%;height:100%;">
+    <div id="settlementErrorToolbar" style="padding:2px 0">
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-audit-result'"
+           id="deduct">划扣通知</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-delete'"
+           id="deleteSettlement">删除</a>
+    </div>
+
+    <div data-options="region:'center'">
+        <table id="settlementErrorLogTable" class="easyui-datagrid"
+               data-options="url:'../../systemInteraction/settlementErrorLog/list',toolbar:'#settlementErrorToolbar',singleSelect:false">
+            <thead>
+            <tr>
+                <th data-options="field:'lendRequestId',width:80,align:'center'">进件号
+                </th>
+                <th data-options="field:'customerName',width:80,align:'center'">姓名
+                </th>
+                <th data-options="field:'times',width:80,align:'center'">次数
+                </th>
+                <th data-options="field:'desc',width:270,align:'center'">错误原因
+                </th>
+                <th data-options="field:'orderId',width:100,align:'center'">订单号</th>
+                <th data-options="field:'createTime',width:100,align:'center',formatter:$.formatDateTime">划扣时间</th>
+            </tr>
+
+            </thead>
+        </table>
+    </div>
+</div>
+</body>
+</html>

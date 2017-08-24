@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>银行卡鉴权</title>
+</head>
+
+<body>
+<form id="authBankCardForm" method="post" class="easyui-form">
+    <input type="text" name="viceUniqueId" id="viceUniqueId" hidden="hidden" readonly/>
+    <div class="main_content_table">
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">银行卡（主卡）:</div>
+            <div class="main_content_td_whitelast_small2"></div>
+            <div class="main_content_td_graylast_small2">银行卡（副卡）:</div>
+            <div class="main_content_td_whitelast_small2">
+                <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'" plain="true" id="changeMainCard">设为主卡</a>
+            </div>
+
+        </div>
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">银行名称:</div>
+            <div class="main_content_td_white_small2">
+                <input type="text" name="bankName" id="bankName" class="easyui-combobox"
+                       data-options="required:true,url:'../../../lendSign/bankName',method:'get',valueField:'bankCode',textField:'bankName',prompt:'银行名称'"/>
+            </div>
+            <div class="main_content_td_graylast_small2">银行名称:</div>
+            <div class="main_content_td_whitelast_small2">
+                <input type="text" name="bankViceName" id="bankViceName" class="easyui-combobox"
+                       data-options="required:true,url:'../../../lendSign/bankName',method:'get',valueField:'bankCode',textField:'bankName',prompt:'银行名称'"/>
+            </div>
+        </div>
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">预留手机号:</div>
+            <div class="main_content_td_white_small2">
+                <input type="text" name="orderMobile" id="orderMobile" class="easyui-validatebox textbox" style="height: 23px" data-options="required:true,validType:'mobile'" placeholder="预留手机号"/>
+            </div>
+            <div class="main_content_td_graylast_small2">预留手机号:</div>
+            <div class="main_content_td_whitelast_small2">
+                <input type="text" name="orderViceMobile" id="orderViceMobile" class="easyui-validatebox textbox" style="height: 23px" data-options="required:true,validType:'mobile'" placeholder="预留手机号"/>
+            </div>
+        </div>
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">银行卡号:</div>
+            <div class="main_content_td_white_small2">
+                <input type="text" name="cardNo" id="cardNo" class="easyui-validatebox textbox"
+                       data-options="required:true,validType:['onlyNumberValidate','maxLength[30]','isEqual[\'#viceCardNo\']']" style="height: 23px" oncopy="return false;" onpaste="return false;" oncut="return false;" style="height: 23px" placeholder="银行卡号"/>
+            </div>
+            <div class="main_content_td_graylast_small2">银行卡号:</div>
+            <div class="main_content_td_whitelast_small2">
+                <input type="text" name="viceCardNo" id="viceCardNo" class="easyui-validatebox textbox" data-options="required:true,validType:['onlyNumberValidate','maxLength[30]','isEqual[\'#cardNo\']']"   oncopy="return false;" onpaste="return false;" oncut="return false;" style="height: 23px" placeholder="银行卡号"/>
+            </div>
+        </div>
+        <div class="div_bottom">
+            <div class="main_content_td_gray_small2">确认银行卡号:</div>
+            <div class="main_content_td_white_small2">
+                <input type="text" name="replayCardNo" id="replayCardNo" class="easyui-validatebox textbox"
+                       data-options="required:true,validType:['onlyNumberValidate','maxLength[30]','equalTo[\'#cardNo\']']" style="height: 23px" oncopy="return false;"  onpaste="return false;" oncut="return false;" placeholder="确认银行卡号"/>
+            </div>
+            <div class="main_content_td_graylast_small2">确认银行卡号:</div>
+            <div class="main_content_td_whitelast_small2">
+                <input type="text" name="replayViceCardNo" id="replayViceCardNo"
+                       class="easyui-validatebox textbox"
+                       data-options="required:true,validType:['onlyNumberValidate','maxLength[30]','equalTo[\'#viceCardNo\']']" style="height: 23px" oncopy="return false" onpaste="return false;" oncut="return false;"  placeholder="确认银行卡号"/>
+            </div>
+            <input type="hidden" id="requestId" name="requestId">
+        </div>
+        <div class="clear"></div>
+        <div class="div_bottom" style="display:none" id="messageCodeDiv">
+            <div class="main_content_td_graylast_small2" style="margin-left :47.8%">
+                <a href="#" id="getViceMessageCodeBtn" class="easyui-linkbutton c6">获取验证码</a>
+            </div>
+            <div class="main_content_td_white_small" style="float:right;margin-right :14%">
+                <input id="viceVerifyValue" name="viceVerifyValue" class="easyui-validatebox textbox" style="height: 24px"
+                       data-options="validType:'onlyNumberValidate'" maxlength="6"/>
+            </div>
+        </div>
+        <div id="authBtn" class="linkbutton_bg" style="float: right;">
+            <a href="#" class="easyui-linkbutton" id="authBankCardOkBtn">确定</a>
+            <a href="#" class="easyui-linkbutton" id="authBankCardCancelBtn">取消</a>
+        </div>
+    </div>
+</form>
+</body>
+</html>

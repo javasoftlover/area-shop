@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>视频签约</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bundle.css?v=1.8.1">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="bookmark" href="images/favicon.ico">
+</head>
+<body class="is-loading">
+<div id="wrapper">
+    <div class="room-name-title" id="room-name-meeting"></div>
+    <div class="main-container">
+        <div id="whiteboard-container"></div>
+        <div id="video-container-parent">
+            <div id="video-container" class="video-container">
+                <div id="video-container-multiple"></div>
+                <div class="toolbar">
+                    <ul>
+                        <!--<li><a class="switch-audio-button" href="#"><img src="images/btn_voice@2x.png" alt="Voice"></a></li>-->
+                        <!--<li><a class="mute-button" href="#"><img src="images/btn_mute@2x.png" alt="Mute"></a></li>-->
+                        <!--<li style="display: none">-->
+							<!--<a class="fullscreen-button" style="display: none" href="#">-->
+								<!--<img style="display: none" src="images/btn_maximize@2x.png" alt="Fullscreen">-->
+							<!--</a>-->
+						<!--</li>-->
+                        <!--<li style="display: none">-->
+							<!--<a class="expension-button" href="#">-->
+								<!--<img style="display: none" src="images/btn_expansion.png" alt="Switch">-->
+							<!--</a>-->
+						<!--</li>-->
+                        <!--<li>-->
+							<!--<a class="record-video-button" href="#">-->
+								<!--<img src="images/btn_record.png" alt="Record">-->
+							<!--</a>-->
+						<!--</li>-->
+
+                        <li>
+							<a class="end-call-button" href="#">
+								<img src="images/btn_endcall@2x.png" alt="End">
+							</a>
+						</li>
+                        <li>
+							<a class="escreen-sharing-button" href="#">
+								<img src="images/btn_screen_sharing@2x.png" alt="sharing">
+							</a>
+						</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="video-side-bar">
+            <div class="video-operation-bar">
+				<span class="video-operation-btn list-switch-audio-btn"></span> 
+				<span class="video-operation-btn list-hang-up-btn"></span> 
+				<span class="video-operation-btn list-close-btn"></span>
+			</div>
+        </div>
+        <div class="info"></div>
+    </div>
+    <div class="share-screen-list" id="js_ShareScreenList">
+        <ul></ul>
+    </div>
+    <div class="arrow-box" id="js_ShareScreenListArrow"><i class="arrow"></i></div>
+    <!--<footer id="footer">-->
+        <!--<ul class="copyright">-->
+            <!--<li><a>Agora.io</a></li>-->
+            <!--<li>Copyright &copy; Agora.io 沪ICP备14053584号</li>-->
+        <!--</ul>-->
+    <!--</footer>-->
+</div>
+<div id="roomInfoModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body"><p>No remote stream yet&hellip;, :(</p></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+	</div>
+</div>
+<script src="js/vendor-bundle.js?v=1.8.1"></script>
+<script src="js/AgoraRtcAgentSDK-1.8.1.js"></script>
+<script src="js/meet.js?v=1.8.1"></script>
+
+<script>
+	if ('addEventListener' in window) {
+		window.addEventListener('load', function () {
+			document.body.className = document.body.className.replace(/\bis-loading\b/, '');
+		});
+		document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+	}
+</script>
+</body>
+</html>

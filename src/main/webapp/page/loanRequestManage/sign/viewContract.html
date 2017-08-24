@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>合同预览</title>
+</head>
+
+<body>
+<div id="ajaxContractPdf" >
+</div>
+</body>
+<script type="text/javascript" src="../../../component/jquery.min.js"></script>
+<script type="text/javascript" src="../../../js/index.js"></script>
+<script>
+    var params = getIframeParams(window.document.location.href);
+    var $height=$(window).height();
+    var str = '<embed  width="100%" id="loadContract" height='+$height+' src="../../../lendSign/view/contracts/' + params.contractId + '/' + params.fileName + '"></embed>';
+    $('#loadContract').attr('src', '../../../lendSign/view/contracts/' + params.contractId + '/' + params.fileName);
+    $('#ajaxContractPdf').html(str);
+</script>
+</html>
