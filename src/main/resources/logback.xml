@@ -5,7 +5,7 @@
     <!-- include logback template from spring boot.jar -->
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <!-- project default level-->
-    <logger name="com.finup" level="INFO" additivity="true"/>
+    <logger name="com.area" level="INFO" additivity="true"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder charset="UTF-8">
@@ -16,12 +16,7 @@
     <root>
         <appender-ref ref="CONSOLE"/>
     </root>
-    <root level="INFO">
-        <appender-ref ref="ROLLINGFILE"/>
-    </root>
 
-
-    <logger name="com.finup" level="INFO" additivity="true"/>
-    <logger name="com.ibatis" level="INFO"/>
+    <logger name="com.area" level="INFO" additivity="true"/>
     <logger name="java.sql" level="INFO"/>
 </configuration>

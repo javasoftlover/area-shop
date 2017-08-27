@@ -1,0 +1,7 @@
+CREATE TABLE `demo` (
+  `id` bigint(16) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `name` varchar(255) DEFAULT NULL COMMENT '姓名',
+  `age` int(10) DEFAULT NULL COMMENT '年龄',
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8

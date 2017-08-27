@@ -1,20 +1,39 @@
 package com.area.shop.service;
 
+import com.area.shop.repository.DemoRep;
+import com.area.shop.domain.Demo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Map;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * demo service
  */
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class DemoService {
+
+    @Autowired
+    private DemoRep demoRep;
 
     /**
      * demo
      */
-    public List<Map<String, Object>> demo(String parentCode) {
-        return null;
+    public String demo(String name) {
+        return "hello world: "+ name;
+    }
+
+    public void saveDemo(Demo demo){
+        demoRep.save(demo);
+    }
+
+    public Page<Demo> findDemoPage(int page, int size){
+        Sort sort = new Sort(Sort.Direction.DESC, "id");
+        Pageable pageable = new PageRequest(page, size, sort);
+        return demoRep.findAll(pageable);
     }
 }
