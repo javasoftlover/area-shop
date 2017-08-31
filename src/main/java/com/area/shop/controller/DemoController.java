@@ -32,7 +32,11 @@ public class DemoController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public void save(@RequestBody Demo demo){
-        demoService.saveDemo(demo);
+        try {
+            demoService.saveDemo(demo);
+        } catch (Exception e) {
+            logger.error("saveDemo error: ", e);
+        }
     }
 
     @RequestMapping(value = "/{page}/{size}/page", method = RequestMethod.GET)

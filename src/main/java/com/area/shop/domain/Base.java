@@ -2,10 +2,7 @@ package com.area.shop.domain;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -21,6 +18,7 @@ public class Base implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(insertable = false)
     private Date createTime;
 
     public Long getId() {

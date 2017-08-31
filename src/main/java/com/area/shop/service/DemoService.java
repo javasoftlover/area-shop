@@ -27,8 +27,9 @@ public class DemoService {
         return "hello world: "+ name;
     }
 
-    public void saveDemo(Demo demo){
+    public void saveDemo(Demo demo) throws Exception {
         demoRep.save(demo);
+        //throw new Exception("测试会滚");
     }
 
     public Page<Demo> findDemoPage(int page, int size){

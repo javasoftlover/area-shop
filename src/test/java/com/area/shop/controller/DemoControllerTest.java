@@ -51,7 +51,7 @@ public class DemoControllerTest {
 
     @Test
     public void page() throws Exception {
-        RequestBuilder request =get("/demo/0/2/page")
+        RequestBuilder request =get("/demo/0/10/page")
                 .contentType(MediaType.APPLICATION_JSON_UTF8);
         mvc.perform(request).andExpect(status().isOk()).andDo(print());
     }
@@ -59,7 +59,7 @@ public class DemoControllerTest {
     @Test
     public void saveDemo() throws Exception {
         Demo demo = new Demo();
-        demo.setName("李四1");
+        demo.setName("李四5");
         demo.setAge(10);
         RequestBuilder request =post("/demo/save")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
