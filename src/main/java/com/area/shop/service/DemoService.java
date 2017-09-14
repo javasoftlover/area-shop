@@ -10,6 +10,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.BitSet;
+
 /**
  * demo service
  */
@@ -28,6 +30,10 @@ public class DemoService {
     }
 
     public void saveDemo(Demo demo) throws Exception {
+        System.out.println("111");
+        BitSet bitSet = new BitSet();
+        bitSet.set(10);
+        demo.setSign(bitSet);
         demoRep.save(demo);
         //throw new Exception("测试会滚");
     }

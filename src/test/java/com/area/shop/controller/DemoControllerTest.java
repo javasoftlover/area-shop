@@ -16,6 +16,8 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.BitSet;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -41,6 +43,7 @@ public class DemoControllerTest {
         mvc = MockMvcBuilders.webAppContextSetup(context).build();
     }
 
+
     @Test
     public void demo() throws Exception {
         logger.info("测试controller...");
@@ -59,8 +62,9 @@ public class DemoControllerTest {
     @Test
     public void saveDemo() throws Exception {
         Demo demo = new Demo();
-        demo.setName("李四5");
+        demo.setName("李四");
         demo.setAge(10);
+
         RequestBuilder request =post("/demo/save")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(JSONObject.fromObject(demo).toString());

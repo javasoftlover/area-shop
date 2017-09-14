@@ -19,8 +19,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-//@ComponentScan(value = "com.area")
-@ServletComponentScan
+@ComponentScan(value = "com.area")
 public class MainApplication extends SpringBootServletInitializer implements DisposableBean {
     private static final Logger log = LoggerFactory.getLogger(MainApplication.class);
     private static ConfigurableApplicationContext ctx;
