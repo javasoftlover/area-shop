@@ -88,10 +88,10 @@
         </resources>
         <plugins>
             <!-- 热启动，热部署依赖插件 和下面的打包插件冲突 -->
-            <!--<plugin>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
             <!-- 打包插件 -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -120,8 +120,6 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <lend.server>http://ut1.zuul.pub.puhuifinance.com:8765/puhui-lend-server</lend.server>
-                <sign.server>http://ut1.zuul.pub.puhuifinance.com:8765/puhui-sign-server</sign.server>
             </properties>
         </profile>
     </profiles>
